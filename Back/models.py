@@ -8,6 +8,7 @@ Pipeline : Ticket -> Classification -> Diagnostic -> RAG -> Agent -> Decision
 from pydantic import BaseModel, Field
 from typing import Optional, Literal
 from datetime import datetime
+from uuid import uuid4
 
 
 # ---------------------------------------------------------------------------
@@ -15,7 +16,11 @@ from datetime import datetime
 # ---------------------------------------------------------------------------
 
 class TicketIn(BaseModel):
-    ticket_id: str
+    # Optionnel : si un système externe fournit déjà un identifiant (ex. ticket
+    # importé d'un outil de ticketing existant), on le garde. Sinon, le backend
+    # génère un UUID unique — le client n'a plus à s'en soucier ni à risquer
+    # une collision.
+    ticket_id: str = Field(default_factory=lambda: str(uuid4()))
     texte: str                     # description brute fournie par l'utilisateur
     utilisateur_id: Optional[str] = None
     horodatage: datetime = Field(default_factory=datetime.now)
