@@ -83,4 +83,5 @@ Réponse :"""
 
 def _fallback(sources: list[dict]) -> str:
     premiere = sources[0]
-    return f"[Réponse générée sans LLM] Voir procédure {premiere['doc_id']} : {premiere['extrait']}"
+    return f"Voir procédure {premiere['doc_id']} : {premiere['extrait']}"
+    #[Réponse générée sans LLM] 
