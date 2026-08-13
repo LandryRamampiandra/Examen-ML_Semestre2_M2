@@ -5,3 +5,7 @@ scikit-learn
 streamlit
 pandas
 python-jose[cryptography]
+google-generativeai
+python-dotenv
+email-validator
+python-multipart

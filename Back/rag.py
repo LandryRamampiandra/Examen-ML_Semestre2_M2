@@ -14,6 +14,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from models import TicketIn, ResultatRAG, SourceDocument
 from logger import timed_step
+import llm_client          # ← ligne ajoutée
 
 KB_FILE = Path(__file__).parent / "data" / "knowledge_base.json"
 SEUIL_CONFIANCE = 0.15  # en dessous -> reponse_incertaine = True
@@ -65,9 +66,10 @@ def retrieve_and_answer(ticket: TicketIn) -> ResultatRAG:
 
         reponse = None
         if not incertaine:
-            # TODO : appel LLM pour synthétiser une réponse à partir de `sources`
-            # en citant les doc_id. Ne JAMAIS répondre sans s'appuyer sur `sources`.
-            reponse = f"Voir procédure {sources[0].doc_id} : {sources[0].extrait}"
+            reponse = llm_client.generate_grounded_answer(
+                question=ticket.texte,
+                sources=[s.model_dump() for s in sources],
+            )
 
         result = ResultatRAG(
             sources=sources,
