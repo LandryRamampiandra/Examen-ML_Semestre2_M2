@@ -430,7 +430,7 @@ function App() {
                 <p><strong>Équipe :</strong> {selectedTicket.equipe_affectee || 'non affectée'}</p>
               </div>
               <div>
-                <p><strong>Utilisateur :</strong> {selectedTicket.utilisateur_id || 'inconnu'}</p>
+                {/* <p><strong>Utilisateur :</strong> {selectedTicket.utilisateur_id || 'inconnu'}</p> */}
                 <p><strong>Créé le :</strong> {selectedTicket.horodatage}</p>
               </div>
             </div>
@@ -440,12 +440,12 @@ function App() {
               <p>{selectedTicket.texte}</p>
             </div>
 
-            {selectedTicket.decisions && selectedTicket.decisions.length > 0 && (
+            {/* {selectedTicket.decisions && selectedTicket.decisions.length > 0 && (
               <div className="detail-text">
                 <h4>Décision enregistrée</h4>
                 <pre>{JSON.stringify(selectedTicket.decisions[0], null, 2)}</pre>
               </div>
-            )}
+            )} */}
           </section>
         )}
       </main>
