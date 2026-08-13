@@ -10,8 +10,15 @@ node_modules/
 __pycache__/
 *.pyc
 
+<<<<<<< HEAD
 # Base de données
 data/app.db
 
 # Logs
 logs/*.jsonl
+=======
+*.db
+*.jsonl
+Back/data/app.db
+Back/logs/traces.jsonl
+>>>>>>> eb9e40046b1202ec98ebb0a725211b2817caeff9
