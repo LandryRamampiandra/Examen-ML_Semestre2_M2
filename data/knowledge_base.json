@@ -1,0 +1,27 @@
+[
+  {
+    "doc_id": "KB-AUTH-01",
+    "titre": "Réinitialisation de mot de passe",
+    "contenu": "En cas de mot de passe oublié ou de compte verrouillé, l'utilisateur doit être redirigé vers le portail de réinitialisation. Une réinitialisation ne peut être effectuée qu'après vérification de l'identité de l'utilisateur. Toute réinitialisation doit être validée par un technicien avant application."
+  },
+  {
+    "doc_id": "KB-NET-04",
+    "titre": "Diagnostic de lenteur réseau",
+    "contenu": "En cas de lenteur réseau, vérifier d'abord l'état du service réseau via verifier_etat_service. Si un incident global est actif, informer l'utilisateur du délai estimé. Sinon, demander un test de débit et vérifier la connexion physique du poste."
+  },
+  {
+    "doc_id": "KB-APP-02",
+    "titre": "Application qui ne démarre plus",
+    "contenu": "Vérifier la version installée et les mises à jour en attente. Redémarrer l'application en mode sans échec. Si le problème persiste après redémarrage du poste, escalader vers le support applicatif niveau 2."
+  },
+  {
+    "doc_id": "KB-PRINT-01",
+    "titre": "Impression impossible",
+    "contenu": "Vérifier que l'imprimante est sous tension et connectée au réseau. Vérifier la file d'attente d'impression. Réinstaller le pilote si l'imprimante n'apparaît pas dans la liste des périphériques."
+  },
+  {
+    "doc_id": "KB-SEC-01",
+    "titre": "Courriel suspect ou tentative de phishing",
+    "contenu": "Ne jamais cliquer sur les liens contenus dans le courriel. Isoler le poste du réseau si un clic a déjà eu lieu. Toute suspicion de compromission doit être escaladée immédiatement vers l'équipe sécurité avec validation humaine obligatoire avant toute action corrective."
+  }
+]

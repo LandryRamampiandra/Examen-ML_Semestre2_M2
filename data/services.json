@@ -1,0 +1,5 @@
+[
+  {"nom": "reseau", "statut": "operationnel", "derniere_maj": "2026-08-13T08:00:00"},
+  {"nom": "messagerie", "statut": "degrade", "derniere_maj": "2026-08-13T07:30:00"},
+  {"nom": "vpn", "statut": "operationnel", "derniere_maj": "2026-08-13T08:00:00"}
+]

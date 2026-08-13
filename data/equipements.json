@@ -1,0 +1,5 @@
+[
+  {"equipement_id": "pc-042", "type": "poste fixe", "etat": "operationnel"},
+  {"equipement_id": "pc-017", "type": "portable", "etat": "operationnel"},
+  {"equipement_id": "imp-03", "type": "imprimante reseau", "etat": "hors service"}
+]
