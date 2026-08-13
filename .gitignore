@@ -11,5 +11,6 @@ __pycache__/
 *.pyc
 
 *.db
-
 *.jsonl
+Back/data/app.db
+Back/logs/traces.jsonl
