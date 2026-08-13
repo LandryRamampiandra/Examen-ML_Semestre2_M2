@@ -15,13 +15,23 @@ from contextlib import contextmanager
 DB_PATH = Path(__file__).parent / "data" / "app.db"
 
 SCHEMA = """
+CREATE TABLE IF NOT EXISTS users (
+    utilisateur_id      TEXT PRIMARY KEY,
+    nom                 TEXT NOT NULL,
+    email               TEXT NOT NULL UNIQUE,
+    mot_de_passe_hash   TEXT NOT NULL,
+    sel                 TEXT NOT NULL,
+    horodatage          TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS tickets (
     ticket_id       TEXT PRIMARY KEY,
     texte           TEXT NOT NULL,
-    utilisateur_id  TEXT,
+    utilisateur_id  TEXT NOT NULL,
     horodatage      TEXT NOT NULL,
     statut          TEXT NOT NULL DEFAULT 'nouveau',
-    equipe_affectee TEXT
+    equipe_affectee TEXT,
+    FOREIGN KEY (utilisateur_id) REFERENCES users(utilisateur_id)
 );
 
 CREATE TABLE IF NOT EXISTS decisions (
@@ -65,6 +75,38 @@ def get_connection():
 def init_db():
     with get_connection() as conn:
         conn.executescript(SCHEMA)
+
+
+# ---------------------------------------------------------------------------
+# Comptes utilisateurs (authentification)
+# ---------------------------------------------------------------------------
+
+def create_user(utilisateur_id: str, nom: str, email: str,
+                 mot_de_passe_hash: str, sel: str, horodatage: str):
+    with get_connection() as conn:
+        conn.execute(
+            """INSERT INTO users (utilisateur_id, nom, email, mot_de_passe_hash, sel, horodatage)
+               VALUES (?, ?, ?, ?, ?, ?)""",
+            (utilisateur_id, nom, email, mot_de_passe_hash, sel, horodatage),
+        )
+
+
+def get_user_by_email(email: str) -> dict | None:
+    with get_connection() as conn:
+        row = conn.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
+        return dict(row) if row else None
+
+
+def get_user_by_id(utilisateur_id: str) -> dict | None:
+    with get_connection() as conn:
+        row = conn.execute(
+            "SELECT * FROM users WHERE utilisateur_id = ?", (utilisateur_id,)
+        ).fetchone()
+        return dict(row) if row else None
+
+
+def email_existe(email: str) -> bool:
+    return get_user_by_email(email) is not None
 
 
 # ---------------------------------------------------------------------------
