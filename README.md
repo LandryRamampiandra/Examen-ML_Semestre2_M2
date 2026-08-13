@@ -31,7 +31,6 @@ Frontend
 ```bash
 cd Front
 npm install
-npm run dev
 ```
 
 Notes
