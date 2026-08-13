@@ -15,25 +15,27 @@ Variables d'environnement attendues (voir .env.example) :
 import os
 import logging
 
+from google import genai
+from google.genai import types
+
 logger = logging.getLogger(__name__)
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
 
-_model = None
+_client = None
 
 
-def _get_model():
-    """Initialise le client à la demande (lazy) — évite un crash au démarrage
+def _get_client() -> genai.Client:
+    """Initialise le client Google GenAI à la demande (lazy) — évite un crash au démarrage
     de l'API si la clé n'est pas encore configurée pendant le développement."""
-    global _model
-    if _model is None:
+    global _client
+    if _client is None:
         if not GEMINI_API_KEY:
             raise RuntimeError("GEMINI_API_KEY non défini dans l'environnement")
-        import google.generativeai as genai
-        genai.configure(api_key=GEMINI_API_KEY, transport="rest")
-        _model = genai.GenerativeModel(GEMINI_MODEL)
-    return _model
+        # Instanciation du nouveau SDK client avec la clé d'environnement
+        _client = genai.Client(api_key=GEMINI_API_KEY)
+    return _client
 
 
 def generate_grounded_answer(question: str, sources: list[dict]) -> str:
@@ -66,11 +68,14 @@ Extraits de documentation disponibles :
 Réponse :"""
 
     try:
-        model = _get_model()
-        response = model.generate_content(
-            prompt,
-            generation_config={"temperature": 0.2, "max_output_tokens": 400},
-            request_options={"timeout": 10},
+        client = _get_client()
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.2,
+                max_output_tokens=400,
+            ),
         )
         texte = (response.text or "").strip()
         return texte or _fallback(sources)
