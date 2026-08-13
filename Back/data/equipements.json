@@ -1,5 +1,38 @@
 [
-  {"equipement_id": "pc-042", "type": "poste fixe", "etat": "operationnel"},
-  {"equipement_id": "pc-017", "type": "portable", "etat": "operationnel"},
-  {"equipement_id": "imp-03", "type": "imprimante reseau", "etat": "hors service"}
+  {
+    "equipement_id": "pc-042",
+    "type": "poste fixe",
+    "etat": "operationnel",
+    "kb_associees": [
+      "KB-NET-09",
+      "KB-NET-11",
+      "KB-NET-12"
+    ],
+    "actions_recommandees": []
+  },
+  {
+    "equipement_id": "pc-017",
+    "type": "portable",
+    "etat": "operationnel",
+    "kb_associees": [
+      "KB-NET-09",
+      "KB-NET-10",
+      "KB-NET-12"
+    ],
+    "actions_recommandees": []
+  },
+  {
+    "equipement_id": "imp-03",
+    "type": "imprimante reseau",
+    "etat": "hors service",
+    "kb_associees": [
+      "KB-NET-11",
+      "KB-NET-09"
+    ],
+    "actions_recommandees": [
+      "Verifier cable reseau, port mural et voyants (KB-NET-11)",
+      "Tester un autre port/cable ; verifier attribution IP (KB-NET-09)",
+      "Escalader vers l'equipe reseau si aucune connectivite retablie"
+    ]
+  }
 ]

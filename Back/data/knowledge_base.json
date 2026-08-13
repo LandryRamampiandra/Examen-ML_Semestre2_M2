@@ -1,27 +1,237 @@
 [
   {
-    "doc_id": "KB-AUTH-01",
-    "titre": "Réinitialisation de mot de passe",
-    "contenu": "En cas de mot de passe oublié ou de compte verrouillé, l'utilisateur doit être redirigé vers le portail de réinitialisation. Une réinitialisation ne peut être effectuée qu'après vérification de l'identité de l'utilisateur. Toute réinitialisation doit être validée par un technicien avant application."
+    "doc_id": "KB-NET-09",
+    "titre": "Adresse IP non attribuée",
+    "contenu": "Si un poste ne reçoit pas d'adresse IP, vérifier la connexion Ethernet ou Wi-Fi, puis renouveler la configuration réseau. Contrôler si le problème concerne uniquement le poste ou plusieurs équipements. Si plusieurs postes sont concernés, vérifier le service DHCP et les équipements réseau. Si le problème est limité à un seul poste, redémarrer l'interface réseau et vérifier le pilote. Escalader vers l'équipe réseau si aucune adresse valide n'est attribuée."
   },
   {
-    "doc_id": "KB-NET-04",
-    "titre": "Diagnostic de lenteur réseau",
-    "contenu": "En cas de lenteur réseau, vérifier d'abord l'état du service réseau via verifier_etat_service. Si un incident global est actif, informer l'utilisateur du délai estimé. Sinon, demander un test de débit et vérifier la connexion physique du poste."
+    "doc_id": "KB-NET-10",
+    "titre": "Erreur DNS",
+    "contenu": "Lorsqu'un utilisateur peut accéder à certains services mais pas aux sites ou serveurs utilisant des noms de domaine, vérifier la résolution DNS. Tester la résolution d'un nom connu et comparer avec l'accès direct par adresse IP lorsque cela est possible. Vérifier la configuration DNS du poste et l'état du service DNS. Si plusieurs utilisateurs sont concernés, rechercher un incident DNS global. Ne pas modifier durablement la configuration DNS sans validation."
   },
   {
-    "doc_id": "KB-APP-02",
-    "titre": "Application qui ne démarre plus",
-    "contenu": "Vérifier la version installée et les mises à jour en attente. Redémarrer l'application en mode sans échec. Si le problème persiste après redémarrage du poste, escalader vers le support applicatif niveau 2."
+    "doc_id": "KB-NET-11",
+    "titre": "Connexion Ethernet inexistante",
+    "contenu": "Vérifier le câble réseau, le port mural et les voyants de la carte réseau. Tester un autre câble ou un autre port lorsque cela est possible. Vérifier que l'interface Ethernet est activée dans le système. Si un autre poste fonctionne sur le même port, rechercher un problème lié au poste. Si plusieurs postes rencontrent le problème sur la même zone, vérifier le switch ou le câblage."
   },
   {
-    "doc_id": "KB-PRINT-01",
-    "titre": "Impression impossible",
-    "contenu": "Vérifier que l'imprimante est sous tension et connectée au réseau. Vérifier la file d'attente d'impression. Réinstaller le pilote si l'imprimante n'apparaît pas dans la liste des périphériques."
+    "doc_id": "KB-NET-12",
+    "titre": "Connexion réseau intermittente",
+    "contenu": "Identifier la fréquence et la durée des déconnexions. Vérifier les journaux réseau du poste, le câble, le Wi-Fi et la stabilité du point d'accès. Tester le poste sur une autre connexion afin d'isoler le problème. Si les déconnexions touchent plusieurs utilisateurs, vérifier les équipements réseau concernés. Documenter les horaires des interruptions pour faciliter l'analyse."
   },
   {
-    "doc_id": "KB-SEC-01",
-    "titre": "Courriel suspect ou tentative de phishing",
-    "contenu": "Ne jamais cliquer sur les liens contenus dans le courriel. Isoler le poste du réseau si un clic a déjà eu lieu. Toute suspicion de compromission doit être escaladée immédiatement vers l'équipe sécurité avec validation humaine obligatoire avant toute action corrective."
-  }  
+    "doc_id": "KB-NET-13",
+    "titre": "Accès à un site interne impossible",
+    "contenu": "Vérifier si le site est accessible depuis un autre poste. Contrôler la connexion réseau, le DNS, le VPN et les éventuelles restrictions d'accès. Si le site est inaccessible pour plusieurs utilisateurs, vérifier le serveur ou le service hébergeant l'application. Si un seul utilisateur est concerné, vérifier ses droits et sa configuration locale."
+  },
+  {
+    "doc_id": "KB-NET-14",
+    "titre": "Connexion VPN très lente",
+    "contenu": "Vérifier d'abord le débit Internet local avant de conclure à un problème VPN. Comparer les performances avec et sans VPN lorsque cela est autorisé. Vérifier la localisation du serveur VPN, la charge du service et les incidents connus. Si plusieurs utilisateurs subissent le même ralentissement, escalader vers l'équipe réseau. Éviter de modifier les paramètres avancés du client sans procédure validée."
+  },
+  {
+    "doc_id": "KB-NET-15",
+    "titre": "Partage réseau inaccessible",
+    "contenu": "Vérifier la connexion réseau et l'accès à d'autres ressources internes. Contrôler si le partage est disponible pour les autres utilisateurs. Si seul un utilisateur est concerné, vérifier ses droits et son authentification. Si le partage est indisponible pour tous, vérifier le serveur de fichiers et les services associés."
+  },
+  {
+    "doc_id": "KB-NET-16",
+    "titre": "Débit Internet inférieur à la normale",
+    "contenu": "Effectuer un test de débit depuis le poste concerné et noter les résultats. Comparer avec un autre poste connecté au même réseau. Vérifier si le problème est lié au Wi-Fi, au câble ou à la connexion Internet générale. Si plusieurs utilisateurs obtiennent des résultats similaires, vérifier l'état de la liaison Internet et des équipements réseau."
+  },
+  {
+    "doc_id": "KB-AUTH-04",
+    "titre": "Nom d'utilisateur inconnu",
+    "contenu": "Si l'utilisateur ne connaît pas son identifiant, vérifier la procédure officielle permettant de retrouver son compte. Ne jamais communiquer d'informations sensibles sans vérification d'identité. Si plusieurs comptes similaires existent, utiliser les informations professionnelles autorisées pour identifier le bon compte. Escalader vers le support identités en cas d'ambiguïté."
+  },
+  {
+    "doc_id": "KB-AUTH-05",
+    "titre": "Mot de passe expiré",
+    "contenu": "Informer l'utilisateur que son mot de passe doit être renouvelé. Utiliser le portail officiel de changement de mot de passe lorsque celui-ci est disponible. Vérifier les règles de complexité et l'expiration. Si le changement échoue, identifier le message d'erreur et vérifier l'état du compte. Une intervention manuelle doit suivre la procédure d'identité."
+  },
+  {
+    "doc_id": "KB-AUTH-06",
+    "titre": "Session utilisateur bloquée",
+    "contenu": "Si une session utilisateur reste bloquée, vérifier si le poste répond encore aux commandes normales. Tenter une reconnexion ou un redémarrage lorsque cela est possible. Si la session reste bloquée après redémarrage, vérifier l'état du compte et les services d'authentification. Si plusieurs utilisateurs rencontrent le problème, rechercher un incident global."
+  },
+  {
+    "doc_id": "KB-AUTH-07",
+    "titre": "Changement de mot de passe refusé",
+    "contenu": "Vérifier le message affiché lors du changement de mot de passe. Contrôler les règles de longueur, complexité et historique. Vérifier également si le compte est verrouillé ou si le mot de passe actuel est incorrect. Si toutes les informations sont valides mais que le changement échoue, escalader vers le support identités."
+  },
+  {
+    "doc_id": "KB-AUTH-08",
+    "titre": "MFA perdu après changement de téléphone",
+    "contenu": "Si l'utilisateur change de téléphone et perd son accès MFA, vérifier son identité avant toute modification. Utiliser une méthode alternative validée si elle existe. Si aucune méthode n'est disponible, transmettre la demande au support identités pour réenregistrement MFA. Ne jamais supprimer une protection MFA sans validation appropriée."
+  },
+  {
+    "doc_id": "KB-APP-06",
+    "titre": "Application affiche une erreur inconnue",
+    "contenu": "Demander à l'utilisateur de fournir le message exact ou une capture d'écran de l'erreur. Identifier l'action qui provoque le problème et déterminer si l'erreur est reproductible. Vérifier les incidents applicatifs connus, puis tester l'application après redémarrage. Si l'erreur concerne plusieurs utilisateurs, rechercher un problème côté serveur. Escalader avec les informations collectées."
+  },
+  {
+    "doc_id": "KB-APP-07",
+    "titre": "Application ne répond plus",
+    "contenu": "Vérifier si l'application est simplement temporairement bloquée ou si le poste entier ne répond plus. Attendre quelques instants avant de forcer la fermeture si une opération importante est en cours. Si nécessaire, fermer puis relancer l'application. Vérifier les ressources système et les mises à jour. Si le problème se répète, collecter les informations et escalader."
+  },
+  {
+    "doc_id": "KB-APP-08",
+    "titre": "Mise à jour d'application échouée",
+    "contenu": "Vérifier le message d'erreur de mise à jour, l'espace disque disponible et la connexion réseau. Redémarrer le poste puis relancer la mise à jour si la procédure l'autorise. Vérifier si la version actuellement installée reste fonctionnelle. Si l'échec persiste, utiliser le package officiel ou escalader vers le support applicatif."
+  },
+  {
+    "doc_id": "KB-APP-09",
+    "titre": "Application absente du poste",
+    "contenu": "Vérifier si l'application est réellement autorisée pour l'utilisateur et si elle est prévue dans son profil logiciel. Contrôler les outils de déploiement disponibles. Si l'application doit être installée, utiliser uniquement la source officielle approuvée. Vérifier ensuite que l'utilisateur possède les droits nécessaires."
+  },
+  {
+    "doc_id": "KB-APP-10",
+    "titre": "Navigateur Internet lent",
+    "contenu": "Vérifier si la lenteur concerne tous les sites ou seulement une application Web. Tester un autre navigateur afin d'isoler le problème. Contrôler les extensions, le cache et les ressources système. Vérifier également la connexion réseau. Si plusieurs utilisateurs rencontrent le problème sur le même service Web, rechercher un incident applicatif."
+  },
+  {
+    "doc_id": "KB-APP-11",
+    "titre": "Page Web inaccessible",
+    "contenu": "Vérifier si le problème concerne une seule page ou l'ensemble du site. Tester l'accès depuis un autre navigateur ou un autre poste. Vérifier la connexion réseau, le DNS et le VPN si le site est interne. Si le site est indisponible pour plusieurs utilisateurs, vérifier son statut de service."
+  },
+  {
+    "doc_id": "KB-APP-12",
+    "titre": "Erreur de synchronisation",
+    "contenu": "Identifier le service ou l'application qui ne synchronise plus les données. Vérifier la connexion Internet, l'état du compte et l'espace de stockage disponible. Redémarrer le client de synchronisation si nécessaire. Si le problème persiste, consulter les journaux ou messages d'erreur disponibles et escalader vers le support applicatif."
+  },
+  {
+    "doc_id": "KB-MAIL-01",
+    "titre": "Email non reçu",
+    "contenu": "Vérifier d'abord l'adresse du destinataire et l'absence d'erreur d'envoi. Contrôler les dossiers indésirables, les règles de messagerie et les éventuels blocages. Vérifier si l'expéditeur reçoit un message d'échec. Si plusieurs utilisateurs ne reçoivent plus de messages, vérifier l'état global de la messagerie."
+  },
+  {
+    "doc_id": "KB-MAIL-02",
+    "titre": "Email bloqué dans la boîte d'envoi",
+    "contenu": "Vérifier la connexion Internet et l'état de synchronisation du client de messagerie. Identifier si un message volumineux bloque la file d'envoi. Tester l'envoi depuis la version Web de la messagerie. Si l'envoi fonctionne sur Web mais pas dans le client, réparer ou recréer le profil local."
+  },
+  {
+    "doc_id": "KB-MAIL-03",
+    "titre": "Boîte aux lettres pleine",
+    "contenu": "Vérifier le quota de stockage de la boîte. Identifier les messages volumineux et les éléments supprimés occupant encore de l'espace. Archiver ou supprimer les données conformément à la politique de conservation. Si la limite est atteinte malgré le nettoyage autorisé, demander une extension selon la procédure interne."
+  },
+  {
+    "doc_id": "KB-MAIL-04",
+    "titre": "Spam important dans la messagerie",
+    "contenu": "Vérifier si les messages indésirables concernent un seul utilisateur ou plusieurs comptes. Ne pas ouvrir les messages suspects. Signaler les courriels selon la procédure prévue. Vérifier les filtres anti-spam et les règles existantes. Si une campagne massive est détectée, prévenir l'équipe sécurité."
+  },
+  {
+    "doc_id": "KB-PRINT-04",
+    "titre": "Impression avec mauvaise qualité",
+    "contenu": "Vérifier si le problème vient de l'imprimante, du toner ou du document. Effectuer une page de test. Contrôler les paramètres de qualité et le type de papier. Si des traces ou défauts persistent sur plusieurs documents, vérifier les consommables et envisager une maintenance matérielle."
+  },
+  {
+    "doc_id": "KB-PRINT-05",
+    "titre": "Imprimante non détectée",
+    "contenu": "Vérifier l'alimentation et la connexion réseau de l'imprimante. Rechercher l'équipement par son nom ou son adresse réseau. Vérifier que le pilote approprié est installé. Si l'imprimante est visible sur le réseau mais pas sur le poste, réinstaller le périphérique selon la procédure."
+  },
+  {
+    "doc_id": "KB-HW-04",
+    "titre": "Écran noir mais ordinateur allumé",
+    "contenu": "Vérifier que l'écran est sous tension et que le câble vidéo est correctement connecté. Tester une autre entrée vidéo ou un autre câble si disponible. Vérifier si le poste fonctionne avec un autre écran. Si l'écran externe fonctionne, suspecter le moniteur initial. Si aucun affichage n'est disponible, escalader vers le support matériel."
+  },
+  {
+    "doc_id": "KB-HW-05",
+    "titre": "Clavier ou souris ne fonctionne plus",
+    "contenu": "Vérifier la connexion USB ou Bluetooth et tester un autre port ou périphérique. Pour un équipement sans fil, vérifier les piles et la connexion. Si un autre clavier ou une autre souris fonctionne sur le même poste, remplacer le périphérique défectueux. Si aucun périphérique ne fonctionne, vérifier le système ou les ports matériels."
+  },
+  {
+    "doc_id": "KB-HW-06",
+    "titre": "Ordinateur très lent au démarrage",
+    "contenu": "Vérifier les applications lancées automatiquement, l'espace disque disponible et l'utilisation des ressources. Contrôler les mises à jour en attente et les logiciels récemment installés. Redémarrer le poste après les corrections. Si le ralentissement persiste, analyser les journaux système et envisager une intervention matérielle si les performances restent anormales."
+  },
+  {
+    "doc_id": "KB-HW-07",
+    "titre": "Batterie ordinateur portable faible",
+    "contenu": "Vérifier l'état de la batterie, le chargeur et le connecteur d'alimentation. Tester le chargeur sur le poste concerné et vérifier si la batterie se recharge correctement. Si la capacité de la batterie est fortement dégradée, transmettre une demande de remplacement matériel. Ne pas utiliser un chargeur non compatible."
+  },
+  {
+    "doc_id": "KB-HW-08",
+    "titre": "Surchauffe du poste",
+    "contenu": "Vérifier si les ventilateurs fonctionnent et si les ouvertures de ventilation sont obstruées. Fermer les applications consommant beaucoup de ressources et placer le poste dans un environnement correctement ventilé. Si la température reste anormalement élevée ou si le poste s'éteint automatiquement, interrompre l'utilisation et escalader vers le support matériel."
+  },
+  {
+    "doc_id": "KB-SEC-05",
+    "titre": "Clé USB inconnue",
+    "contenu": "Ne pas connecter une clé USB trouvée ou provenant d'une source inconnue à un poste professionnel. Remettre le support à l'équipe informatique ou sécurité pour analyse. Si la clé a déjà été connectée, signaler immédiatement l'événement et suivre la procédure de contrôle de sécurité."
+  },
+  {
+    "doc_id": "KB-SEC-06",
+    "titre": "Alerte antivirus",
+    "contenu": "Lorsqu'une alerte antivirus apparaît, ne pas désactiver la protection et ne pas ignorer l'avertissement. Identifier le fichier, l'application et l'action ayant déclenché l'alerte. Laisser l'outil de sécurité appliquer la quarantaine prévue lorsque celle-ci est automatique. Si le fichier est professionnel et potentiellement nécessaire, demander une analyse à l'équipe sécurité plutôt que de désactiver la protection."
+  },
+  {
+    "doc_id": "KB-SEC-07",
+    "titre": "Logiciel inconnu installé",
+    "contenu": "Identifier le logiciel, son origine et son utilisateur. Vérifier s'il fait partie des applications autorisées. Ne pas désinstaller immédiatement un logiciel potentiellement nécessaire sans analyse. Si l'installation semble non autorisée ou suspecte, prévenir l'équipe sécurité et conserver les informations utiles à l'analyse."
+  },
+  {
+    "doc_id": "KB-SEC-08",
+    "titre": "Comportement inhabituel du poste",
+    "contenu": "En cas de fenêtres inhabituelles, ralentissements soudains, applications inconnues ou activité réseau suspecte, demander à l'utilisateur de ne pas poursuivre les manipulations. Isoler le poste du réseau lorsque la procédure de sécurité le prévoit. Prévenir immédiatement l'équipe sécurité et conserver les informations utiles à l'analyse. Ne pas réinstaller ou nettoyer le poste avant validation si cela risque de supprimer des éléments nécessaires à l'investigation."
+  },
+  {
+    "doc_id": "KB-VIDEO-01",
+    "titre": "Visioconférence impossible",
+    "contenu": "Vérifier la connexion Internet, l'accès à la plateforme de visioconférence et l'état du service. Tester le microphone et la caméra dans les paramètres de l'application. Vérifier les permissions du navigateur ou du système. Si la plateforme fonctionne pour d'autres utilisateurs mais pas pour la personne concernée, redémarrer l'application ou tester la version Web."
+  },
+  {
+    "doc_id": "KB-VIDEO-02",
+    "titre": "Microphone non détecté",
+    "contenu": "Vérifier que le microphone est correctement connecté et sélectionné dans l'application. Contrôler les autorisations système et le volume d'entrée. Tester le microphone avec une autre application. Si un autre microphone fonctionne, remplacer ou reconfigurer le périphérique initial."
+  },
+  {
+    "doc_id": "KB-VIDEO-03",
+    "titre": "Caméra non détectée",
+    "contenu": "Vérifier que la caméra n'est pas désactivée physiquement ou utilisée par une autre application. Contrôler les autorisations de confidentialité et le périphérique sélectionné dans l'application. Tester la caméra avec une autre application. Si elle reste inaccessible, vérifier le pilote et escalader vers le support matériel ou applicatif."
+  },
+  {
+    "doc_id": "KB-STORAGE-01",
+    "titre": "Stockage partagé indisponible",
+    "contenu": "Vérifier si le problème concerne tous les utilisateurs ou uniquement une personne. Contrôler l'accès réseau et l'état du serveur de stockage. Vérifier les incidents en cours avant de modifier la configuration locale. Si le stockage est globalement indisponible, informer les utilisateurs et transmettre l'incident à l'équipe infrastructure."
+  },
+  {
+    "doc_id": "KB-STORAGE-02",
+    "titre": "Synchronisation OneDrive ou stockage cloud bloquée",
+    "contenu": "Vérifier la connexion Internet, l'espace disponible et l'état de connexion du compte. Contrôler les erreurs affichées par le client de synchronisation. Redémarrer le client puis tester une nouvelle synchronisation. Si le problème concerne plusieurs utilisateurs, vérifier l'état du service cloud. Ne pas supprimer le dossier local synchronisé avant d'avoir vérifié la situation."
+  },
+  {
+    "doc_id": "KB-PHONE-01",
+    "titre": "Téléphone professionnel sans réseau",
+    "contenu": "Vérifier le mode avion, la couverture réseau, la carte SIM et l'état du compte mobile. Redémarrer le téléphone et tester la connexion dans une autre zone. Si plusieurs utilisateurs sont concernés, vérifier l'état de l'opérateur. Si le problème reste limité à un appareil, transmettre au support téléphonie."
+  },
+  {
+    "doc_id": "KB-PHONE-02",
+    "titre": "Application professionnelle absente du téléphone",
+    "contenu": "Vérifier que le téléphone est correctement enregistré dans la gestion des appareils et que l'utilisateur est autorisé à utiliser l'application. Contrôler l'espace disponible et la connexion Internet. Réinstaller l'application depuis la source officielle si nécessaire. Si le déploiement automatique échoue, escalader vers l'administration mobile."
+  },
+  {
+    "doc_id": "KB-REMOTE-01",
+    "titre": "Accès distant au poste impossible",
+    "contenu": "Vérifier que le poste distant est allumé, connecté au réseau et autorisé pour l'accès distant. Contrôler le VPN si celui-ci est nécessaire. Vérifier que le compte possède les droits requis. Si le poste est inaccessible pour plusieurs utilisateurs, vérifier le service d'accès distant avant de modifier la configuration."
+  },
+  {
+    "doc_id": "KB-REMOTE-02",
+    "titre": "Session distante déconnectée",
+    "contenu": "Vérifier la stabilité de la connexion Internet et du VPN. Déterminer si la déconnexion se produit uniquement avec un poste ou plusieurs sessions. Reconnecter la session si possible. Si les déconnexions sont fréquentes, vérifier les délais de session, les ressources du serveur distant et les incidents réseau."
+  },
+  {
+    "doc_id": "KB-DATA-02",
+    "titre": "Fichier impossible à ouvrir",
+    "contenu": "Identifier le type de fichier et vérifier que l'application nécessaire est installée. Contrôler si le fichier fonctionne sur un autre poste. Si le fichier est corrompu, rechercher une version précédente ou une copie disponible. Ne pas télécharger de logiciel inconnu pour ouvrir un fichier professionnel. Si plusieurs fichiers du même type sont concernés, vérifier l'application associée."
+  },
+  {
+    "doc_id": "KB-DATA-03",
+    "titre": "Fichier partagé en lecture seule",
+    "contenu": "Vérifier si le fichier est réellement verrouillé par un autre utilisateur ou si les droits du compte sont limités. Contrôler les permissions du dossier et du fichier. Si le document est ouvert ailleurs, demander à l'utilisateur concerné de le fermer. Ne pas modifier les permissions sans autorisation. Si le verrouillage persiste après fermeture, transmettre le cas au support approprié."
+  },
+  {
+    "doc_id": "KB-DATA-04",
+    "titre": "Fichier trop volumineux pour être envoyé",
+    "contenu": "Vérifier la taille maximale autorisée par le service utilisé. Si le fichier dépasse la limite, utiliser la solution officielle de partage de fichiers ou de stockage cloud. Éviter les services de transfert non approuvés pour les données professionnelles sensibles. Vérifier que les destinataires disposent des droits nécessaires avant de partager le fichier."
+  }
 ]

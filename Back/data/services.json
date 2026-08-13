@@ -1,5 +1,39 @@
 [
-  {"nom": "reseau", "statut": "operationnel", "derniere_maj": "2026-08-13T08:00:00"},
-  {"nom": "messagerie", "statut": "degrade", "derniere_maj": "2026-08-13T07:30:00"},
-  {"nom": "vpn", "statut": "operationnel", "derniere_maj": "2026-08-13T08:00:00"}
+  {
+    "nom": "reseau",
+    "statut": "operationnel",
+    "derniere_maj": "2026-08-13T08:00:00",
+    "kb_associees": [
+      "KB-NET-09",
+      "KB-NET-10",
+      "KB-NET-11",
+      "KB-NET-12"
+    ],
+    "incidents_lies": [
+      "inc-101"
+    ],
+    "note": "Service marque operationnel mais incident de lenteur multi-postes actif (inc-101) - a surveiller"
+  },
+  {
+    "nom": "messagerie",
+    "statut": "degrade",
+    "derniere_maj": "2026-08-13T07:30:00",
+    "kb_associees": [
+      "KB-NET-10",
+      "KB-SEC-01"
+    ],
+    "incidents_lies": [],
+    "note": "Statut degrade : verifier resolution DNS (KB-NET-10) et surveiller courriels suspects (KB-SEC-01, validation humaine obligatoire)"
+  },
+  {
+    "nom": "vpn",
+    "statut": "operationnel",
+    "derniere_maj": "2026-08-13T08:00:00",
+    "kb_associees": [
+      "KB-NET-10",
+      "KB-NET-12"
+    ],
+    "incidents_lies": [],
+    "note": "RAS - references DNS et stabilite de connexion en cas de degradation"
+  }
 ]

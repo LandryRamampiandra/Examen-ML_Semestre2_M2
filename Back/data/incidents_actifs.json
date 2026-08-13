@@ -1,3 +1,27 @@
 [
-  {"incident_id": "inc-101", "categorie": "reseau_connectivite", "description": "Lenteur generale sur le reseau du 2e etage", "depuis": "2026-08-13T07:00:00"}
+  {
+    "incident_id": "inc-101",
+    "categorie": "reseau_connectivite",
+    "description": "Lenteur generale sur le reseau du 2e etage",
+    "depuis": "2026-08-13T07:00:00",
+    "portee": "multi_postes",
+    "gravite": "moyenne",
+    "kb_associees": [
+      "KB-NET-11",
+      "KB-NET-12",
+      "KB-NET-09"
+    ],
+    "etapes_diagnostic": [
+      "Identifier la frequence et la duree des ralentissements/deconnexions (KB-NET-12)",
+      "Verifier switch et cablage de la zone 2e etage puisque plusieurs postes sont concernes (KB-NET-11)",
+      "Verifier les equipements reseau et le service DHCP si adressage impacte (KB-NET-09)",
+      "Documenter les horaires des interruptions pour analyse (KB-NET-12)"
+    ],
+    "escalade": "Equipe reseau si le probleme persiste sur les equipements de zone",
+    "validation_humaine_requise": false,
+    "services_lies": [
+      "reseau"
+    ],
+    "equipements_potentiels": []
+  }
 ]
