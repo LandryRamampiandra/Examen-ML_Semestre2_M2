@@ -9,21 +9,3 @@ node_modules/
 # Cache Python
 __pycache__/
 *.pyc
-
-# Base de données
-data/app.db
-
-# Logs
-logs/*.jsonl
-
-# Environment
-.env
-*.env
-
-# SQLite
-*.db
-*.sqlite3
-
-# Logs
-*.log
-Back/logs/
